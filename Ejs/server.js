@@ -8,11 +8,13 @@ const app = express();
 const routerProductos = require('./src/routes/productos.routes');
 
 // ---- Middlewares ----
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, "public")));
 
+// ---- MOTOR DE PLANTILLA ---- //
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 // ---- Rutas ----
 app.use('/', routerProductos);
