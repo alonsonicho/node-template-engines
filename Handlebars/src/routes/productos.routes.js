@@ -10,7 +10,7 @@ routerProductos.get('/', (req, res) => {
 
 routerProductos.post('/productos', (req, res) => {
     DB_PRODUCTOS.push(req.body);
-    console.log(DB_PRODUCTOS)
+    // console.log(DB_PRODUCTOS)
     res.redirect('/')
 })
 
